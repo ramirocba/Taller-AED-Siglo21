@@ -20,21 +20,21 @@ public class Nodo {
 	//Obtiene el dato del nodo
 	public Object getDato() {
 		return dato;
-	}//Fin método getDato.
+	}//Fin metodo getDato.
 	
 	//Establece el dato del nodo.
 	public void setDato(Object dato) {
 		this.dato = dato;
-	}//Fin método setDato.
+	}//Fin metodo setDato.
 	
 	//Obtiene el nodo siguiente.
 	public Nodo getSig() {
 		return sig;
-	}//Fin método getSig.
+	}//Fin metodo getSig.
 	
 	//Establece el nodo siguiente.
 	public void setSig(Nodo sig) {
 		this.sig = sig;
-	}//Fin método setSig.
+	}//Fin metodo setSig.
 	
 }//Fin clase Nodo.
