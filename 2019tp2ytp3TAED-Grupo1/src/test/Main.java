@@ -2,7 +2,6 @@ package test;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import modelo.*;
 import vista.Menu;
 import util.RandomUtils;
@@ -43,30 +42,31 @@ public class Main {
 				cajas.get(i).listar();
 			}
 			
-			System.out.println("\n\nComenzando Simulación");
+			System.out.println("\n\nComenzando Simulacion");
 			do {
 				Box aux = new Box();
-				
+
 
 				aux = cajas.get(RandomUtils.generarNumeroAleatorio(INDICE_CAJAS));
-				while (aux.isEmpty()){
+				while (aux.isEmpty()) {
 					aux = cajas.get(RandomUtils.generarNumeroAleatorio(INDICE_CAJAS));
 				}
-				
-				for(int i = 0; i < INDICE_CAJAS; i++)
-				if((cajas.get(i).equals(aux)) && (cajas.get(i).isEmpty())) {
-					System.out.println("\n[BOX" + " " + i + "] Vacío");
-					
-				}
-				else {
-					for(i = 0; i < INDICE_CAJAS; i++)
-						if(cajas.get(i).equals(aux) && !(cajas.get(i).isEmpty()))
-						System.out.printf("\n\n[BOX" + " " + i + "]: Se quitó '%s'", aux.dequeue());
+						for (int i = 0; i < INDICE_CAJAS; i++) {
+							if (cajas.get(i).equals(aux) && !(cajas.get(i).isEmpty()))
+								System.out.printf("\n\n[BOX" + " " + i + "]: Se quito '%s'", aux.dequeue());
+								if (aux.size()== 0){
+									System.out.println("\n[BOX" + " " + i + "] Vacio");
+									break;
+								}
 
-				}
-					if(cajas.get(0).isEmpty() && cajas.get(1).isEmpty() && cajas.get(2).isEmpty() && cajas.get(3).isEmpty())
-						bandera = false;
-			}while(bandera);
+					}
+
+
+						if (cajas.get(0).isEmpty() && cajas.get(1).isEmpty() && cajas.get(2).isEmpty() && cajas.get(3).isEmpty())
+							bandera = false;
+					}
+				while (bandera);
+
 			
 			break;
 		case 2:
@@ -76,6 +76,6 @@ public class Main {
 		default:
 			break;
 		}
-	}//Fin método main.
+	}//Fin metodo main.
 
 }//Fin clase main.
