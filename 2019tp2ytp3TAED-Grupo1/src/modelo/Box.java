@@ -4,11 +4,11 @@ public class Box {
 
 	private Nodo primero;
 	private Nodo ultimo;
-	private int tamaño;
+	private int size;
 
 	  public Box() {
 	    ultimo = null;
-	    tamaño = 0;
+	    size = 0;
 	  }
 
 	  public void enqueue(Object dato) {
@@ -22,7 +22,7 @@ public class Box {
 	      ultimo.setSig(nodoNuevo);
 	      ultimo = nodoNuevo;
 	    }
-	    tamaño++;
+	    size++;
 	  }; // inserts an object onto the queue
 
 	  public Object dequeue() {
@@ -32,16 +32,16 @@ public class Box {
 	    
 	    Object o = primero.getDato();
 	    primero = primero.getSig();
-	    tamaño--;
+	    size--;
 	    return o;
 	  } // gets the object from the queue
 
 	  public boolean isEmpty() {
-	    return (tamaño == 0);
+	    return (size == 0);
 	  }
 
 	  public int size() {
-	    return tamaño;
+	    return size;
 	  }
 
 	  public Object primero() {
