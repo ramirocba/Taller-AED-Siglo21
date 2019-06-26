@@ -16,7 +16,7 @@ public class RandomUtils {
 	//Método que genera un numero aleatorio.
 	public static int generarNumeroAleatorio() {
 		
-		return elementosAleatorios.nextInt(15);
+		return (elementosAleatorios.nextInt(15)+1);
 	}//Fin método generarNumeroAletorio.
 	
 	//Sobrecarga de generarNumerosAleatoriios, genera numeros dentro de un rango determinado.

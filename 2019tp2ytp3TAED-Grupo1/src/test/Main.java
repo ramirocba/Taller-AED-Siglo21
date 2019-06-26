@@ -43,21 +43,26 @@ public class Main {
 				cajas.get(i).listar();
 			}
 			
-			System.out.println("\n\nComenzando SimulaciÃ³n");
+			System.out.println("\n\nComenzando Simulación");
 			do {
 				Box aux = new Box();
 				
+
 				aux = cajas.get(RandomUtils.generarNumeroAleatorio(INDICE_CAJAS));
+				while (aux.isEmpty()){
+					aux = cajas.get(RandomUtils.generarNumeroAleatorio(INDICE_CAJAS));
+				}
 				
 				for(int i = 0; i < INDICE_CAJAS; i++)
-				if(cajas.get(i).equals(aux) && cajas.get(i).isEmpty()) {
-					System.out.println("\n[BOX" + " " + i + "] VacÃ­o");
+				if((cajas.get(i).equals(aux)) && (cajas.get(i).isEmpty())) {
+					System.out.println("\n[BOX" + " " + i + "] Vacío");
 					
 				}
 				else {
 					for(i = 0; i < INDICE_CAJAS; i++)
 						if(cajas.get(i).equals(aux) && !(cajas.get(i).isEmpty()))
-						System.out.printf("\n\n[BOX" + " " + i + "]: Se quitÃ³ '%s'", aux.dequeue());
+						System.out.printf("\n\n[BOX" + " " + i + "]: Se quitó '%s'", aux.dequeue());
+
 				}
 					if(cajas.get(0).isEmpty() && cajas.get(1).isEmpty() && cajas.get(2).isEmpty() && cajas.get(3).isEmpty())
 						bandera = false;
@@ -71,6 +76,6 @@ public class Main {
 		default:
 			break;
 		}
-	}//Fin mÃ©todo main.
+	}//Fin método main.
 
 }//Fin clase main.
